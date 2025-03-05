@@ -5,6 +5,7 @@ import string
 import time
 import os
 import random
+from tqdm import tqdm
 
 configuration_number = "1xM18650"
 version = "1.0.0"
@@ -30,9 +31,9 @@ time.sleep(0.5)
 print("Service package 1: start configuration ")
 time.sleep(0.5)
 
-for i in tqdm.tqdm(range(3000), ascii=True, desc="System check"):
+for i in tqdm(range(3000), ascii=True, desc="System check"):
     time.sleep(0.001)
-
+    
 print("")
 print(os.system("ifconfig | grep -w inet"))
 
